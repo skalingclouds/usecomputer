@@ -1,0 +1,608 @@
+# Instincts generated from https://github.com/skalingclouds/usecomputer
+# Generated: 2026-04-02T03:22:54.593Z
+# Version: 2.0
+# NOTE: This file supplements (does not replace) any existing curated instincts.
+# High-confidence manually curated instincts should be preserved alongside these.
+
+---
+id: usecomputer-commit-length
+trigger: "when writing a commit message"
+confidence: 0.6
+domain: git
+source: repo-analysis
+source_repo: https://github.com/skalingclouds/usecomputer
+---
+
+# Usecomputer Commit Length
+
+## Action
+
+Write moderate-length commit messages (~60 characters)
+
+## Evidence
+
+- Average commit message length: 60 chars
+- Based on 35 commits
+
+---
+id: usecomputer-naming-files
+trigger: "when creating a new file"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: https://github.com/skalingclouds/usecomputer
+---
+
+# Usecomputer Naming Files
+
+## Action
+
+Use camelCase naming convention
+
+## Evidence
+
+- Analyzed file naming patterns in repository
+- Dominant pattern: camelCase
+
+---
+id: usecomputer-import-relative
+trigger: "when importing modules"
+confidence: 0.75
+domain: code-style
+source: repo-analysis
+source_repo: https://github.com/skalingclouds/usecomputer
+---
+
+# Usecomputer Import Relative
+
+## Action
+
+Use relative imports for project files
+
+## Evidence
+
+- Import analysis shows relative import pattern
+- Example: import { x } from '../lib/x'
+
+---
+id: usecomputer-export-style
+trigger: "when exporting from a module"
+confidence: 0.7
+domain: code-style
+source: repo-analysis
+source_repo: https://github.com/skalingclouds/usecomputer
+---
+
+# Usecomputer Export Style
+
+## Action
+
+Prefer named exports
+
+## Evidence
+
+- Export pattern analysis
+- Dominant style: named
+
+---
+id: usecomputer-test-colocate
+trigger: "when writing tests"
+confidence: 0.85
+domain: testing
+source: repo-analysis
+source_repo: https://github.com/skalingclouds/usecomputer
+---
+
+# Usecomputer Test Colocate
+
+## Action
+
+Place test file next to the source file (e.g., Button.test.tsx next to Button.tsx)
+
+## Evidence
+
+- Colocated test pattern detected
+- Tests live alongside source files
+
+---
+id: usecomputer-test-framework
+trigger: "when writing tests"
+confidence: 0.9
+domain: testing
+source: repo-analysis
+source_repo: https://github.com/skalingclouds/usecomputer
+---
+
+# Usecomputer Test Framework
+
+## Action
+
+Use vitest as the test framework
+
+## Evidence
+
+- Test framework detected: vitest
+- File pattern: *.test.ts
+
+---
+id: usecomputer-test-naming
+trigger: "when creating a test file"
+confidence: 0.85
+domain: testing
+source: repo-analysis
+source_repo: https://github.com/skalingclouds/usecomputer
+---
+
+# Usecomputer Test Naming
+
+## Action
+
+Name test files using the pattern: *.test.ts
+
+## Evidence
+
+- File pattern: *.test.ts
+- Consistent across test files
+
+---
+id: usecomputer-workflow-feature-development
+trigger: "when implementing a new feature"
+confidence: 0.9
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/skalingclouds/usecomputer
+---
+
+# Usecomputer Workflow Feature Development
+
+## Action
+
+Follow the feature-development workflow:
+1. Add feature implementation
+2. Add tests for feature
+3. Update documentation
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~13x per month
+- Files: scripts/*, **/api/**
+
+---
+id: usecomputer-workflow-release-version-bump
+trigger: "when doing release version bump"
+confidence: 0.7
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/skalingclouds/usecomputer
+---
+
+# Usecomputer Workflow Release Version Bump
+
+## Action
+
+Follow the release-version-bump workflow:
+1. Update CHANGELOG.md with new release notes.
+2. Update version in package.json.
+3. Commit changes with a 'release: usecomputer@X.Y.Z' message.
+4. Push to repository to trigger CI and publish.
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~4x per month
+- Files: CHANGELOG.md, package.json
+
+---
+id: usecomputer-workflow-ci-workflow-update
+trigger: "when doing ci workflow update"
+confidence: 0.75
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/skalingclouds/usecomputer
+---
+
+# Usecomputer Workflow Ci Workflow Update
+
+## Action
+
+Follow the ci-workflow-update workflow:
+1. Edit .github/workflows/ci.yml with required changes.
+2. Commit with a message describing the CI fix or enhancement.
+3. Push to repository to apply new CI behavior.
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~5x per month
+- Files: .github/workflows/ci.yml
+
+---
+id: usecomputer-workflow-feature-add-c-api
+trigger: "when doing feature add c api"
+confidence: 0.6
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/skalingclouds/usecomputer
+---
+
+# Usecomputer Workflow Feature Add C Api
+
+## Action
+
+Follow the feature-add-c-api workflow:
+1. Edit or create zig/src/c_api.zig for C API logic.
+2. Edit or create zig/include/usecomputer.h for the C header.
+3. Update build.zig to add or modify build targets for C API.
+4. Optionally add or update examples/screenshot.c for C usage.
+5. Update package.json scripts if needed.
+6. Update CI workflow to build and release C API artifacts.
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~2x per month
+- Files: zig/src/c_api.zig, zig/include/usecomputer.h, build.zig
+
+---
+id: usecomputer-workflow-remove-feature-across-stack
+trigger: "when doing remove feature across stack"
+confidence: 0.55
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/skalingclouds/usecomputer
+---
+
+# Usecomputer Workflow Remove Feature Across Stack
+
+## Action
+
+Follow the remove-feature-across-stack workflow:
+1. Remove feature implementation from Zig source files.
+2. Remove related TypeScript bridge, types, and API code.
+3. Remove or update related tests.
+4. Update package.json if necessary.
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~1x per month
+- Files: zig/src/lib.zig, zig/src/main.zig, src/bridge.ts
+
+---
+id: usecomputer-workflow-add-platform-support
+trigger: "when doing add platform support"
+confidence: 0.6
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/skalingclouds/usecomputer
+---
+
+# Usecomputer Workflow Add Platform Support
+
+## Action
+
+Follow the add-platform-support workflow:
+1. Update .github/workflows/ci.yml to build and test the new platform.
+2. Update build.zig and scripts/build.ts for new platform targets.
+3. Update documentation (README.md, AGENTS.md) to mention new support.
+4. Update package.json if needed.
+5. Update Zig source files if platform-specific logic is required.
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~2x per month
+- Files: .github/workflows/ci.yml, build.zig, scripts/build.ts
+
+---
+id: usecomputer-instinct-file-naming
+trigger: "When creating a new file"
+confidence: 0.85
+domain: code-style
+source: repo-analysis
+source_repo: skalingclouds/usecomputer
+---
+
+# Usecomputer Instinct File Naming
+
+## Action
+
+Name the file using camelCase
+
+## Evidence
+
+- Pattern in codeStyle.namingConventions.files
+- Observed in src/index.ts
+
+---
+id: usecomputer-instinct-function-naming
+trigger: "When defining a new function"
+confidence: 0.85
+domain: code-style
+source: repo-analysis
+source_repo: skalingclouds/usecomputer
+---
+
+# Usecomputer Instinct Function Naming
+
+## Action
+
+Name the function using camelCase
+
+## Evidence
+
+- Pattern in codeStyle.namingConventions.functions
+
+---
+id: usecomputer-instinct-class-naming
+trigger: "When defining a new class"
+confidence: 0.85
+domain: code-style
+source: repo-analysis
+source_repo: skalingclouds/usecomputer
+---
+
+# Usecomputer Instinct Class Naming
+
+## Action
+
+Name the class using PascalCase
+
+## Evidence
+
+- Pattern in codeStyle.namingConventions.classes
+
+---
+id: usecomputer-instinct-constant-naming
+trigger: "When defining a new constant"
+confidence: 0.85
+domain: code-style
+source: repo-analysis
+source_repo: skalingclouds/usecomputer
+---
+
+# Usecomputer Instinct Constant Naming
+
+## Action
+
+Name the constant using SCREAMING_SNAKE_CASE
+
+## Evidence
+
+- Pattern in codeStyle.namingConventions.constants
+
+---
+id: usecomputer-instinct-import-style
+trigger: "When importing modules in TypeScript"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: skalingclouds/usecomputer
+---
+
+# Usecomputer Instinct Import Style
+
+## Action
+
+Use relative import paths
+
+## Evidence
+
+- Pattern in codeStyle.importStyle
+
+---
+id: usecomputer-instinct-export-style
+trigger: "When exporting from a TypeScript file"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: skalingclouds/usecomputer
+---
+
+# Usecomputer Instinct Export Style
+
+## Action
+
+Use named exports
+
+## Evidence
+
+- Pattern in codeStyle.exportStyle
+
+---
+id: usecomputer-instinct-test-file-pattern
+trigger: "When creating a test file"
+confidence: 0.9
+domain: testing
+source: repo-analysis
+source_repo: skalingclouds/usecomputer
+---
+
+# Usecomputer Instinct Test File Pattern
+
+## Action
+
+Name the file with a .test.ts suffix
+
+## Evidence
+
+- Pattern in testing.filePattern
+- Seen in src/bridge-contract.test.ts
+
+---
+id: usecomputer-instinct-test-framework
+trigger: "When writing tests"
+confidence: 0.9
+domain: testing
+source: repo-analysis
+source_repo: skalingclouds/usecomputer
+---
+
+# Usecomputer Instinct Test Framework
+
+## Action
+
+Use the vitest framework
+
+## Evidence
+
+- Pattern in testing.framework
+
+---
+id: usecomputer-instinct-test-type
+trigger: "When writing tests"
+confidence: 0.8
+domain: testing
+source: repo-analysis
+source_repo: skalingclouds/usecomputer
+---
+
+# Usecomputer Instinct Test Type
+
+## Action
+
+Write unit tests
+
+## Evidence
+
+- Pattern in testing.testTypes
+
+---
+id: usecomputer-instinct-commit-format-prefix
+trigger: "When writing a commit message"
+confidence: 0.9
+domain: git
+source: repo-analysis
+source_repo: skalingclouds/usecomputer
+---
+
+# Usecomputer Instinct Commit Format Prefix
+
+## Action
+
+Start the commit message with a prefix such as 'feat:', 'fix:', or 'release:'
+
+## Evidence
+
+- Pattern in commits.prefixes
+- Seen in commit 'feat: add 'zig build c-api' target for C shared library'
+
+---
+id: usecomputer-instinct-commit-format-length
+trigger: "When writing a commit message"
+confidence: 0.7
+domain: git
+source: repo-analysis
+source_repo: skalingclouds/usecomputer
+---
+
+# Usecomputer Instinct Commit Format Length
+
+## Action
+
+Keep the commit message concise, around 60 characters
+
+## Evidence
+
+- Pattern in commits.averageLength
+
+---
+id: usecomputer-instinct-release-version-bump
+trigger: "When preparing a new release"
+confidence: 0.98
+domain: workflow
+source: repo-analysis
+source_repo: skalingclouds/usecomputer
+---
+
+# Usecomputer Instinct Release Version Bump
+
+## Action
+
+Update CHANGELOG.md and package.json, then commit with 'release: usecomputer@X.Y.Z' and push to trigger CI
+
+## Evidence
+
+- release-version-bump workflow
+- Seen in commit 'release: usecomputer@0.1.9 — add C API shared library and platform archives'
+
+---
+id: usecomputer-instinct-ci-workflow-update
+trigger: "When changing CI build, test, or release automation"
+confidence: 0.95
+domain: workflow
+source: repo-analysis
+source_repo: skalingclouds/usecomputer
+---
+
+# Usecomputer Instinct Ci Workflow Update
+
+## Action
+
+Edit .github/workflows/ci.yml, commit with a descriptive message, and push
+
+## Evidence
+
+- ci-workflow-update workflow
+- Seen in commit 'fix ci: add contents: write permission for gh release upload'
+
+---
+id: usecomputer-instinct-feature-add-c-api
+trigger: "When adding or enhancing C API support"
+confidence: 0.92
+domain: workflow
+source: repo-analysis
+source_repo: skalingclouds/usecomputer
+---
+
+# Usecomputer Instinct Feature Add C Api
+
+## Action
+
+Edit zig/src/c_api.zig, zig/include/usecomputer.h, build.zig, optionally examples/screenshot.c, update package.json and CI workflow
+
+## Evidence
+
+- feature-add-c-api workflow
+- Seen in commit 'feat: add 'zig build c-api' target for C shared library'
+
+---
+id: usecomputer-instinct-remove-feature-across-stack
+trigger: "When removing a feature from the stack"
+confidence: 0.88
+domain: workflow
+source: repo-analysis
+source_repo: skalingclouds/usecomputer
+---
+
+# Usecomputer Instinct Remove Feature Across Stack
+
+## Action
+
+Remove feature from Zig, TypeScript, tests, and update package.json if needed
+
+## Evidence
+
+- remove-feature-across-stack workflow
+
+---
+id: usecomputer-instinct-add-platform-support
+trigger: "When adding support for a new OS/architecture"
+confidence: 0.87
+domain: workflow
+source: repo-analysis
+source_repo: skalingclouds/usecomputer
+---
+
+# Usecomputer Instinct Add Platform Support
+
+## Action
+
+Update CI, build scripts, documentation, package.json, and Zig source for the new platform
+
+## Evidence
+
+- add-platform-support workflow
+- Seen in commit 'ci: use native ARM64 runner for linux-arm64 build'
+
